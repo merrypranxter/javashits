@@ -28,7 +28,7 @@ test('all twelve systems render, mutate, and retain distinct pixels',async({page
     });
     expect(colors,`${name} should contain actual artwork`).toBeGreaterThan(8);
     await openControls(page);const seed=await page.locator('.seed-row').innerText();
-    await page.getByRole('button',{name:'Mutate specimen',exact:false}).first().click();
+    await page.locator('.inspector').getByRole('button',{name:'Mutate specimen',exact:false}).click();
     await expect(page.locator('.seed-row')).not.toHaveText(seed);
     await closeControls(page);await page.waitForTimeout(250);
     await expect.poll(()=>image(page),{message:`${name} mutation must change the artwork`}).not.toBe(before);
@@ -68,12 +68,17 @@ test('aspect ratio, panel-free viewing, pause, and touch interaction work',async
   await page.getByRole('button',{name:/^Show panels/}).first().click();await expect(page.locator('.lab')).not.toHaveClass(/zen/);
 });
 
-test('exports a real 3840px PNG and a decodable browser-native video',async({page},testInfo)=>{
+test('exports a real 3840px PNG',async({page},testInfo)=>{
   await page.goto('/');await openControls(page);await expect(page.getByRole('button',{name:'Export PNG',exact:true})).toBeEnabled();
   await page.getByRole('combobox',{name:'Aspect ratio',exact:true}).selectOption('1:1');
   const pngEvent=page.waitForEvent('download');await page.getByRole('button',{name:'Export PNG',exact:true}).click();
   const png=await pngEvent;expect(await png.failure()).toBeNull();const pngPath=testInfo.outputPath('capture.png');await png.saveAs(pngPath);
   const bytes=await readFile(pngPath);expect(bytes.subarray(1,4).toString()).toBe('PNG');expect(bytes.readUInt32BE(16)).toBe(3840);expect(bytes.readUInt32BE(20)).toBe(3840);
+});
+
+test('records a decodable browser-native video when an encoder is available',async({page},testInfo)=>{
+  await page.goto('/');await openControls(page);await expect(page.getByRole('button',{name:'Export PNG',exact:true})).toBeEnabled();
+  await page.getByRole('combobox',{name:'Aspect ratio',exact:true}).selectOption('1:1');
   await closeControls(page);await page.getByRole('combobox',{name:'Loop or recording duration'}).selectOption('6');await openControls(page);
   const button=page.getByRole('button',{name:/^Record 6s/});
   test.skip(!await button.count(),'Browser has no MediaRecorder canvas encoder');

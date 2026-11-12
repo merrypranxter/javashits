@@ -4,7 +4,7 @@
 
 Twelve interactive experiments in light, matter, geometry, and beautiful computational misbehavior.
 
-**[Enter the laboratory →](https://merrypranxter.github.io/javashits/)**
+**Play locally:** run the two commands below and open the Vite URL. A private hosted copy has been prepared; its publication requires authorization.
 
 Everything in the artwork is computed in the browser. There are no AI-generated artwork assets, remote rendering services, API keys, or backend. The experiment thumbnails are small captures of the real renderers.
 
@@ -88,6 +88,6 @@ npm test
 
 To use a system Chromium: `CHROMIUM_PATH=/usr/bin/chromium npm run test:chromium`.
 
-The browser suite covers all twelve renderers and mutations, pixel diversity, mechanism/palette changes, reset, saved settings, shared recipes, touch input, pause, unobstructed viewing, aspect ratios, actual 3840px PNG downloads, browser-decoded video downloads, and closure of every analytic phase cycle. It runs desktop Chromium and mobile-emulated WebKit. Mobile emulation is not a substitute for testing physical iPhones.
+The browser suite covers all twelve renderers and mutations, pixel diversity, mechanism/palette changes, reset, saved settings, shared recipes, touch input, pause, unobstructed viewing, aspect ratios, actual 3840px PNG downloads, browser-decoded video downloads, and closure of every analytic phase cycle. It runs desktop Chromium and mobile-emulated WebKit. Both engines passed renderer, mutation, control, touch, storage, sharing, and phase-cycle checks. Actual 3840px PNG files were verified in both engines. An H.264 MP4 was recorded and decoded in Chromium; this Linux WebKit build exposes no video encoder, so video capture was skipped there. Mobile emulation is not a substitute for testing physical iPhones.
 
-GitHub Actions builds and deploys the static application to GitHub Pages on pushes to `main`; a separate workflow runs the browser checks.
+A private Sites copy is prepared but is not published while hosting authorization is pending. The complete source is in this repository. GitHub Pages creation was refused by the connected integration (HTTP 403). To use Pages, a repository administrator can enable **Settings → Pages → GitHub Actions**; the included deployment workflow will then publish on pushes to `main`. Until enabled, the workflow builds the app and reports that publication is skipped. A separate workflow runs the browser checks.
