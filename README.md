@@ -6,7 +6,9 @@ Twelve interactive experiments in light, matter, geometry, and beautiful computa
 
 **[Download the self-contained laboratory →](https://github.com/merrypranxter/javashits/raw/refs/heads/main/downloads/JAVASHITS.html)**
 
-The HTML build embeds the application, fonts, and previews. It needs no external runtime assets. The source version below runs with Vite. A private hosted copy has been prepared; its publication requires authorization.
+**[Enter the live laboratory →](https://javashits-psychedelic-lab.merrypranxter.chatgpt.site)** (private; sign in with the owner’s ChatGPT account).
+
+The downloadable HTML build embeds the application, fonts, and previews. It needs no external runtime assets. The source version below runs with Vite.
 
 Everything in the artwork is computed in the browser. There are no AI-generated artwork assets, remote rendering services, API keys, or backend. The experiment thumbnails are small captures of the real renderers.
 
@@ -94,4 +96,5 @@ To use a system Chromium: `CHROMIUM_PATH=/usr/bin/chromium npm run test:chromium
 
 The browser suite covers all twelve renderers and mutations, pixel diversity, mechanism/palette changes, reset, saved settings, shared recipes, touch input, pause, unobstructed viewing, aspect ratios, actual 3840px PNG downloads, browser-decoded video downloads, and closure of every analytic phase cycle. It runs desktop Chromium and mobile-emulated WebKit. Both engines passed renderer, mutation, control, touch, storage, sharing, and phase-cycle checks. Actual 3840px PNG files were verified in both engines. An H.264 MP4 was recorded and decoded in Chromium; this Linux WebKit build exposes no video encoder, so video capture was skipped there. Mobile emulation is not a substitute for testing physical iPhones.
 
-A private Sites copy is prepared but is not published while hosting authorization is pending. The complete source is in this repository. GitHub Pages creation was refused by the connected integration (HTTP 403). To use Pages, a repository administrator can enable **Settings → Pages → GitHub Actions**; the included deployment workflow will then publish on pushes to `main`. Until enabled, the workflow builds the app and reports that publication is skipped. A separate workflow runs the browser checks.
+The laboratory is published privately with Sites at https://javashits-psychedelic-lab.merrypranxter.chatgpt.site. The complete source is in this repository. GitHub Pages creation was refused by the connected integration (HTTP 403). To use Pages, a repository administrator can enable **Settings → Pages → GitHub Actions**; the included deployment workflow will then publish on pushes to `main`. Until enabled, the workflow builds the app and reports that publication is skipped. A separate workflow runs the browser checks.
+
