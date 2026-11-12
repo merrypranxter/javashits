@@ -4,7 +4,7 @@
 
 Twelve interactive experiments in light, matter, geometry, and beautiful computational misbehavior.
 
-**[Download the self-contained laboratory →](https://github.com/merrypranxter/javashits/releases/latest/download/JAVASHITS.html)**
+**[Download the self-contained laboratory →](https://github.com/merrypranxter/javashits/raw/refs/heads/main/downloads/JAVASHITS.html)**
 
 The HTML build embeds the application, fonts, and previews. It needs no external runtime assets. The source version below runs with Vite. A private hosted copy has been prepared; its publication requires authorization.
 
