@@ -4,7 +4,9 @@
 
 Twelve interactive experiments in light, matter, geometry, and beautiful computational misbehavior.
 
-**Play locally:** run the two commands below and open the Vite URL. A private hosted copy has been prepared; its publication requires authorization.
+**[Download the self-contained laboratory →](https://github.com/merrypranxter/javashits/releases/latest/download/JAVASHITS.html)**
+
+The HTML build embeds the application, fonts, and previews. It needs no external runtime assets. The source version below runs with Vite. A private hosted copy has been prepared; its publication requires authorization.
 
 Everything in the artwork is computed in the browser. There are no AI-generated artwork assets, remote rendering services, API keys, or backend. The experiment thumbnails are small captures of the real renderers.
 
@@ -59,6 +61,8 @@ npm run preview
 ```
 
 The production output is `dist/`. Vite uses relative asset paths, so it can be hosted at a subdirectory such as GitHub Pages.
+
+`npm run build:standalone` also produces `dist/JAVASHITS.html`, a self-contained build with inline JavaScript, styles, fonts, and procedural previews. Its embedded document was checked in Chromium and WebKit with no HTTP requests. Direct file-URL navigation is blocked by this execution environment, so that launch path remains unverified here.
 
 ## Browser support and performance
 

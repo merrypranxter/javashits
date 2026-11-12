@@ -22,7 +22,7 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      - run: npm run build
+      - run: npm run build:standalone
       - name: Check Pages availability
         id: pages
         uses: actions/github-script@v7
